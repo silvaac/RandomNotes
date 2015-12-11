@@ -1,0 +1,189 @@
+% resume.tex
+% vim:set ft=tex spell:
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{tgpagella}
+\usepackage{multicol}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true, urlcolor=blue
+}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+% and the actual content starts here
+\begin{document}
+
+\begin{center}
+
+{\LARGE \textbf{FirstName LastName}} \\[0.09cm]
+(XXX) XXX-XXXX\ \ \textbullet
+\ \ professional.email@stanford.edu \\
+\href{http://www.myhomepage.com}{www.myhomepage.com} % {URL}[displaytext]
+\end{center}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Education}
+\begin{itemize}
+	\parskip=0.1em
+
+	\item 
+	\headerrow
+		{\textbf{Stanford University}}
+		{\textbf{Stanford, CA}}
+	\\
+	\headerrow
+        % B.S. Computer Science or B.S. Computer Science (Intended)
+		{\emph{B.S. Major}} 
+		{\emph{2011 -- 2015 (Expected)}}
+    \begin{itemize*}
+        \item Interests: Topic relevant to major, other topic relevant to
+              major... (this is optional)
+    \end{itemize*}
+\end{itemize}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Experience}
+
+\begin{itemize}
+	\parskip=0.1em
+
+	\item
+	\headerrow
+		{\textbf{Company Name}}
+		{\textbf{Town, ST}}
+	\\
+	\headerrow
+		{\emph{Job Title}}
+		{\emph{September 2012 -- Present}}
+	\begin{itemize*}
+        \item Responsibilities, accomplishments, projects, etc.
+        \item More bullet points!
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{Company Name}}
+		{\textbf{Town, ST}}
+	\\
+	\headerrow
+		{\emph{Job Title}}
+		{\emph{June 2011 -- September 2012}}
+	\begin{itemize*}
+        \item Responsibilities, accomplishments, projects, etc.
+        \item More bullet points!
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{Company Name}}
+		{\textbf{Town, ST}}
+	\\
+	\headerrow
+		{\emph{Job Title}}
+		{\emph{September 2010 -- June 2011}}
+	\begin{itemize*}
+        \item Responsibilities, accomplishments, projects, etc.
+        \item More bullet points!
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{Company Name}}
+		{\textbf{Town, ST}}
+	\\
+	\headerrow
+		{\emph{Job Title}}
+		{\emph{June 2010 -- August 2010}}
+	\begin{itemize*}
+        \item Responsibilities, accomplishments, projects, etc.
+        \item More bullet points!
+	\end{itemize*}
+
+\end{itemize}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Skills}
+
+\begin{indentsection}{\parindent}
+\hyphenpenalty=1000
+\begin{description*}
+	\item[Languages:] Python, C 
+    \item[Familiarity:] \CPP, Java, PHP, JavaScript, Ruby
+\end{description*}
+\end{indentsection}
+
+\hrule
+
+% NOTE: You can remove this if you don't want two column text!
+\begin{multicols}{2} 
+
+\vspace{-0.4em}
+\subsection*{Activities}
+
+\begin{itemize}
+	\parskip=0.1em
+	\item
+	\headerrow
+		{\textbf{Club}} {}
+    \headerrow
+        {\emph{Position}}
+        {\emph{June 2013 -- Present}}
+	\begin{itemize*}
+        \item Accomplishments, tasks, etc.
+	\end{itemize*}
+\end{itemize}
+
+\vspace{-0.4em}
+\subsection*{Awards}
+
+\begin{itemize}
+    \item
+    \headerrow
+        {\textbf{Award Title}} {Optional Location} \\
+    \headerrow
+        {\emph{Extra information}}
+        {\emph{April 2013}}
+    \begin{itemize*}
+        \item Description
+    \end{itemize*}
+\end{itemize}
+
+\end{multicols}
+\end{document}
